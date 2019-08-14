@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="not-found">
+        <div class="col-md-5 col-lg-4 col-lg-offset-1 sm-hidden xs-hidden">
+            <img class="img-responsive" alt="Error" src="{{ url_for('static', filename='Images/404.jpg')}}">
+        </div>
+        <div class="col-md-7 col-lg-6">
+            <div class="not-found-content">
+                <h2>
+                    Oops! There was an error.
+                </h2>
+                <p>
+                    We are really sorry, something has gone wrong.
+                    
+                    <p>Head back to homepage using the navigation or contact us.</p>
+                </p>
+                <a href="{{ url_for('home.index')}}" class="btn">
+                    Go back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

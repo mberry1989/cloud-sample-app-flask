@@ -1,0 +1,71 @@
+<html>
+    <head id="head">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <title>Dancing Goat</title>
+        <link href="{{ url_for('static', filename='Styles/Site.css')}}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="page-wrap">
+            <header class="header" role="banner">
+                <div class="menu">
+                    <div class="container">
+                        <nav role="navigation">
+                            <ul>                              
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>                                
+                                <li>
+                                    <a href="/articles">Articles</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>                
+                <div class="header-row">
+                    <div class="container">
+                        <div class="col-xs-8 col-md-8 col-lg-4 logo">
+                            <h1 class="logo">
+                                Dancing Goat
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                {% block content %}
+              
+                {% endblock %}
+              </div>
+
+        </div>
+        <div class="footer-wrapper">
+            <footer role="contentinfo">
+                <div class="footer-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4 footer-col">
+                            {% block address %}
+                                {{ contact | safe}}
+                            {% endblock %}
+                            </div>  
+                            <div class="col-md-4 col-lg-4 footer-col">
+                                    <h3>Follow Us On Social Media!</h3>
+                                    <a class="followus-link" href="https://www.facebook.com/Dancing.Goat" target="_blank">
+                                        <img alt="Follow Us On Facebook" class="" src="{{ url_for('static', filename='Images/facebook-icon.png')}}" title="Follow Us On Facebook">
+                                    </a>
+                                    <a class="followus-link" href="https://twitter.com/DancingGoat78" target="_blank">
+                                        <img alt="Follow Us On Twitter" class="" src="{{ url_for('static', filename='Images/twitter-icon.png')}}" title="Follow Us On Twitter">
+                                    </a>
+                                </div>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    Copyright &copy; {{ time }} Dancing Goat. All rights reserved.
+                </div>
+            </footer>
+        </div>     
+    </body>
+</html>

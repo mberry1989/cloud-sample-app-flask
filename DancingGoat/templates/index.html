@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+  <div>
+    {% for item in hero_unit.values() %}
+      {% if loop.first %}
+      <section class="banner-section" style="background-image: url('{{ item.image[0].url }}')">
+          <h2 class="banner-heading">{{ item.title }}</h2>
+          <div class="banner-text">
+              {{ item.marketing_message|safe }}
+          </div>
+      </section>
+      {% endif %}
+    {% endfor %}
+    <div class="row">
+    {% for article in articles.values() %}
+      {% if loop.first %}        
+          <h1 class="title-tab">Latest Article</h1>
+          <div class="article-tile article-tile-large">
+              <div class="col-md-12 col-lg-6">
+                  <a href="/articles/{{article.url_pattern}}">
+                      <img src='{{ article.teaser_image[0].url }}' class="article-tile-image"/>
+                  </a>
+              </div>
+              <div class="col-md-12 col-lg-6">
+                  <div class="article-tile-date">
+                      {{ article.post_date.strftime('%B %d') }}
+                  </div>
+                  <div class="article-tile-content">
+                      <h2>
+                          <a href="/articles/{{article.url_pattern}}">{{ article.title }}</a>
+                      </h2>
+                      <p class="article-tile-text lead-paragraph">
+                          {{ article.summary }}
+                      </p>
+                  </div>
+              </div>
+          </div>
+        
+      {% else %}
+        <div class="col-md-3">
+            <div class="article-tile">
+                <a href="/articles/{{article.url_pattern}}">
+                    <img src='{{ article.teaser_image[0].url }}' class="article-tile-image" />
+                </a>
+                <div class="article-tile-date">
+                    {{ article.post_date.strftime('%B %d') }}
+                </div>
+                <div class="article-tile-content">
+                    <h2 class="h4">
+                        <a href="/articles/{{article.url_pattern}}">{{ article.title }}</a>
+                    </h2>
+                    <p class="article-tile-text">
+                        {{ article.summary }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}          
+      {% endfor %}
+    </div>
+    
+    <div class="clear center-text">
+      <a href="/articles" class="btn btn-more">More Articles</a>
+    </div>
+  </div>
+{% endblock %}
