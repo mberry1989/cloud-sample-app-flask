@@ -12,4 +12,3 @@ This application is meant for use with the Dancing Goat sample project within Ke
 pip install -r requirements.txt
 app.py
 ```
-The application will then be available at localhost:5000 (configurable in /bin/www).
