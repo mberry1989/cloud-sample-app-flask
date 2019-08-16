@@ -1,6 +1,7 @@
 # cloud-sample-app-flask
 The Dancing Goat demo site created using Flask and Jinja2 templates without an SDK and beginner-level knowledge of Python and Flask.
-This is a Flask (Python 3.x) application meant for use with the Dancing Goat sample project within Kentico Cloud. This project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kentico Cloud subscription [can generate one](https://app.kenticocloud.com/sample-project-generator).
+
+This application is meant for use with the Dancing Goat sample project within Kentico Cloud. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kentico Cloud subscription [can generate one](https://app.kenticocloud.com/sample-project-generator).
 
 ### Setup
 
